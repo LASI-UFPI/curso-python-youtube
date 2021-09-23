@@ -1,0 +1,21 @@
+#title {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  font-family: "Grey Qo", cursive;
+}
+
+hr {
+  background-color: rgba(0, 0, 0, 0.178);
+}
+
+h5 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+h6 {
+  font-style: italic;
+  font-size: medium;
+}

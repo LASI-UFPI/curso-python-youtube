@@ -1,0 +1,27 @@
+#title {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  font-family: "Grey Qo", cursive;
+}
+
+hr {
+  background-color: rgba(0, 0, 0, 0.151);
+}
+
+#link {
+  text-decoration: none;
+}
+
+#identification {
+  color: black;
+}
+
+h5 {
+  color: rgb(11, 11, 145);
+}
+
+p {
+  color: black;
+}

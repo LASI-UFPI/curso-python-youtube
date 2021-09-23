@@ -1,0 +1,43 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap" rel="stylesheet">
+    {% bootstrap_css %}
+    <title>Meu Blog</title>
+</head>
+<body>
+    <h1 id="title">Blog da LASI</h1>
+    <hr>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for post in posts %}
+            <a href="article/{{ post.slug }}" id='link'>
+               <div class="col mb-4">
+                <div class="card bg-light h-100">
+                    <div class="card-header" id="identification">Publicado em {{ post.created}} por {{ post.author }}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">
+                            {{ post.body|linebreaks|truncatewords:10 }}                            
+                        </p>
+                        </h5>
+                    </div>
+                </div>
+               </div> 
+            </a>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>

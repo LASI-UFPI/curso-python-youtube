@@ -1,0 +1,28 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap" rel="stylesheet">
+    <title>{{ post.title }}</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <h1 id="title">Blog da LASI</h1>
+    <hr>
+    <div class="container">
+        <h5>{{ post.title }}</h5>
+        <h6>Escrito por: {{ post.author }}</h6>
+        <p class="text-justify">
+            {{ post.body|linebreaks }}
+        </p>
+    </div> 
+    {% bootstrap_javascript jquery='full' %}   
+</body>
+</html>
