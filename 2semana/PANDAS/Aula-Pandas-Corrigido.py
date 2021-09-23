@@ -21,8 +21,17 @@ for c in range(0,len(serie)-1):
                 valor = float(df['VALOR_FIN'][r])
                 
                 valor_calc = preco*litros
-                valor_calcUP = float ('{:.2f}'.format(round(valor_calc+0.02)))
-                valor_calcDW = float ('{:.2f}'.format(round(valor_calc-0.02)))
+                
+                # PONTO INCORRETO DO VÍDEO ORIGINAL, NÃO É COLOCADO O 2° PARAMETRO
+                # DA FUNÇÃO ROUND QUE DELIMITA PARA QUANTAS CASAS DECIMAIS É FEITO
+                # O ARREDONDAMENTO
+                # valor_calcUP = float ('{:.2f}'.format(round(valor_calc+0.02)))
+                # valor_calcDW = float ('{:.2f}'.format(round(valor_calc-0.02)))
+                # PARA ESSE EXEMPLO, DEVE SER COLOCADO O 2 PARA DEFINIR 2 CASAS DE
+                # ARREDONDAMENTO DO NOSSO FLOAT
+                valor_calcUP = float ('{:.2f}'.format(round(valor_calc+0.02,2)))
+                valor_calcDW = float ('{:.2f}'.format(round(valor_calc-0.02,2)))
+                
                 if not(valor_calcDW <= valor <= valor_calcUP):
                     print('\n- Máquina com defeito! Serial '+str(df['SERIAL'][r]))
                     cont += 1
